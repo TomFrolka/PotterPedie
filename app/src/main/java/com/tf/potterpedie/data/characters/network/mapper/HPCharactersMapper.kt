@@ -5,8 +5,9 @@ import com.tf.potterpedie.data.characters.network.model.WandDto
 import com.tf.potterpedie.domain.characters.model.HPCharacter
 import com.tf.potterpedie.domain.characters.model.Wand
 import com.tf.potterpedie.domain.util.DomainMapper
+import javax.inject.Inject
 
-class HPCharactersMapper: DomainMapper<HPCharacterDto, HPCharacter> {
+class HPCharactersMapper @Inject constructor() : DomainMapper<HPCharacterDto, HPCharacter> {
     override fun mapToDomainModel(model: HPCharacterDto): HPCharacter =
         HPCharacter(
             id = model.id,
@@ -23,7 +24,7 @@ class HPCharactersMapper: DomainMapper<HPCharacterDto, HPCharacter> {
             hogwartsStaff = model.hogwartsStaff,
             hogwartsStudent = model.hogwartsStudent,
             house = model.house,
-            image = model.house,
+            image = model.image,
             patronus = model.patronus,
             species = model.species,
             wand = Wand(
@@ -51,7 +52,7 @@ class HPCharactersMapper: DomainMapper<HPCharacterDto, HPCharacter> {
             hogwartsStaff = domainModel.hogwartsStaff,
             hogwartsStudent = domainModel.hogwartsStudent,
             house = domainModel.house,
-            image = domainModel.house,
+            image = domainModel.image,
             patronus = domainModel.patronus,
             species = domainModel.species,
             wandDto = WandDto(

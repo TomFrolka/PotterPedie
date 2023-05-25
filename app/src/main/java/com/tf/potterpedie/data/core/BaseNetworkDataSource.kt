@@ -12,10 +12,10 @@ abstract class BaseNetworkDataSource {
                 val body = response.body()
                 body?.let { return DataState.Success(body) }
             }
-            return DataState.Error("${response.code()} ${response.message()}")
+            return error("${response.code()} ${response.message()}")
 
         } catch (e: Exception) {
-            return DataState.Error(e.message ?: e.toString())
+            return error(e.message ?: e.toString())
         }
     }
 

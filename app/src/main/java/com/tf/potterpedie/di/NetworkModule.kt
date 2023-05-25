@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder
 import com.tf.potterpedie.data.characters.network.CharactersNetworkDataSource
 import com.tf.potterpedie.data.characters.network.ICharactersNetworkDataSource
 import com.tf.potterpedie.data.characters.network.ICharactersNetworkService
+import com.tf.potterpedie.data.core.HttpRequestInterceptor
 import com.tf.potterpedie.domain.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -35,11 +36,9 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideOkHttpClient(interceptors: List<Interceptor>): OkHttpClient {
+    fun provideOkHttpClient(interceptor: Interceptor): OkHttpClient {
         val builder = OkHttpClient().newBuilder()
-        interceptors.forEach {
-            builder.addInterceptor(it)
-        }
+        builder.addInterceptor(interceptor)
         builder.readTimeout(Constants.API_TIMEOUT, TimeUnit.SECONDS)
         builder.writeTimeout(Constants.API_TIMEOUT, TimeUnit.SECONDS)
         builder.connectTimeout(Constants.API_TIMEOUT, TimeUnit.SECONDS)
@@ -56,5 +55,9 @@ object NetworkModule {
     fun provideCharactersNetworkDataSource(characterNetworkService: ICharactersNetworkService): ICharactersNetworkDataSource =
         CharactersNetworkDataSource(characterNetworkService)
 
-
+    @Singleton
+    @Provides
+    fun provideHttpRequestInterceptor(): Interceptor {
+        return HttpRequestInterceptor()
+    }
 }
