@@ -1,4 +1,10 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:viewportWidth="512" android:viewportHeight="512" android:width="512dp" android:height="512dp">
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:viewportWidth="512"
+    android:viewportHeight="512"
+    android:width="512dp"
+    android:height="512dp"
+    tools:ignore="VectorRaster">
     <path android:pathData="M69.5 0L442.5 0L447 3.5L449 8.5L449 41.5L444.5 49Q441.3 51.3 434.5 50L430 46.5L428 42.5L428 20L84 20L84 396.5L82 400L78.5 402L69.5 402L66 400L64 396.5L64 5.5L66 2L69.5 0Z" android:fillColor="#000000" android:fillAlpha="0.9647059" android:strokeColor="#000000" android:strokeAlpha="0.9647059" android:strokeWidth="1"/>
     <path android:pathData="M434.5 70Q444.3 68.3 447 73.5L449 81.5L444.5 89Q441.3 91.3 434.5 90L430 86.5Q427.2 83.8 428 77.5L432.5 71L434.5 70Z" android:fillColor="#000000" android:fillAlpha="0.9647059" android:strokeColor="#000000" android:strokeAlpha="0.9647059" android:strokeWidth="1"/>
     <path android:pathData="M147.5 105Q156.3 103.2 159.5 107L182.5 129L205.5 106Q208.7 103.7 215.5 105L219 107Q221.7 110 222 116.5L220 121.5L197 144.5L219 166.5Q222 169.5 222 175.5L217.5 183L209.5 185L203.5 182L181.5 160L158.5 183L150.5 185L144 181.5L141 174.5L143 168.5L166 144.5L144 122.5L141 114.5L144 107L147.5 105Z" android:fillColor="#000000" android:fillAlpha="0.9647059" android:strokeColor="#000000" android:strokeAlpha="0.9647059" android:strokeWidth="1"/>
