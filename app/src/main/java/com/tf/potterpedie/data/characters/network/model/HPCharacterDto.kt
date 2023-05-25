@@ -19,11 +19,11 @@ data class HPCharacterDto(
     @SerializedName("dateOfBirth")
     val dateOfBirth: String? = null,
     @SerializedName("eyeColour")
-    val eyeColour: String,
+    val eyeColor: String,
     @SerializedName("gender")
     val gender: String,
     @SerializedName("hairColour")
-    val hairColour: String,
+    val hairColor: String,
     @SerializedName("hogwartsStaff")
     val hogwartsStaff: Boolean,
     @SerializedName("hogwartsStudent")

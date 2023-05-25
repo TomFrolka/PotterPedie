@@ -20,7 +20,7 @@ class HomeViewModel @Inject constructor(
     private val _allCharacters = MutableStateFlow<DataState<List<HPCharacter>>>(DataState.Loading())
     val allCharacters = _allCharacters.asStateFlow()
 
-    private fun getAllCharacters() = viewModelScope.launch {
+    fun getAllCharacters() = viewModelScope.launch {
         charactersRepository.getAllCharacters().collect { result ->
             Timber.d(result.toString())
             _allCharacters.value = result

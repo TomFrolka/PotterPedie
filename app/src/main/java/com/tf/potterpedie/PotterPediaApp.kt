@@ -5,7 +5,7 @@ import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 @HiltAndroidApp
-class PotterPediaApp: Application() {
+class PotterPedieApp: Application() {
 
     override fun onCreate() {
         super.onCreate()

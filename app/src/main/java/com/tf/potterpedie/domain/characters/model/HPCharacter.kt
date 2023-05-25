@@ -1,6 +1,9 @@
 package com.tf.potterpedie.domain.characters.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class HPCharacter(
     val id: String,
     val actor: String,
@@ -9,9 +12,9 @@ data class HPCharacter(
     val alternateNames: List<String>,
     val ancestry: String,
     val dateOfBirth: String,
-    val eyeColour: String,
+    val eyeColor: String,
     val gender: String,
-    val hairColour: String,
+    val hairColor: String,
     val hogwartsStaff: Boolean,
     val hogwartsStudent: Boolean,
     val house: String,
@@ -22,10 +25,10 @@ data class HPCharacter(
     val wand: Wand,
     val wizard: Boolean,
     val yearOfBirth: Int
-)
-
+): Parcelable
+@Parcelize
 data class Wand(
     val core: String,
     val length: Double,
     val wood: String
-)
+): Parcelable
