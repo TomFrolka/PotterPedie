@@ -13,7 +13,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,17 +31,11 @@ import timber.log.Timber
 @Composable
 fun HomeScreen(
     homeViewModel: HomeViewModel = hiltViewModel(),
-    navController: NavController,
-    onScreenLoaded: () -> Unit,
+    navController: NavController
 ) {
 
     val allCharactersState by homeViewModel.allCharacters.collectAsStateWithLifecycle()
-
     val lazyGridState = rememberLazyGridState()
-
-    LaunchedEffect(key1 = true){
-        onScreenLoaded()
-    }
 
     Scaffold(
         topBar = { PotterAppBar(modifier = Modifier.background(MaterialTheme.colorScheme.background)) },

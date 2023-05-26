@@ -8,7 +8,7 @@ abstract class BaseNetworkDataSource {
     protected open suspend fun <T> getResult(call: suspend () -> Response<T>): DataState<T> {
         try {
             val response = call()
-            if (response.isSuccessful) { //TODO add extension functions ifTrue ifFalse
+            if (response.isSuccessful) {
                 val body = response.body()
                 body?.let { return DataState.Success(body) }
             }

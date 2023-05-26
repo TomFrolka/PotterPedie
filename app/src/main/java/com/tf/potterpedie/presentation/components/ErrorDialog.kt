@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.tf.potterpedie.R
+import com.tf.potterpedie.presentation.theme.PotterpedieTheme
 
 @Composable
 fun ErrorDialog(onError: () -> Unit) {
@@ -56,5 +57,7 @@ fun ErrorDialog(onError: () -> Unit) {
 @Preview
 @Composable
 fun ErrorDialogPreview() {
-    ErrorDialog {}
+    PotterpedieTheme {
+        ErrorDialog {}
+    }
 }

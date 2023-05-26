@@ -36,6 +36,7 @@ import com.tf.potterpedie.domain.characters.model.HPCharacter
 import com.tf.potterpedie.domain.characters.model.Wand
 import com.tf.potterpedie.presentation.components.DetailEntry
 import com.tf.potterpedie.presentation.components.NavigationButton
+import com.tf.potterpedie.presentation.theme.PotterpedieTheme
 
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -135,11 +136,13 @@ fun DetailScreen(
                             title = stringResource(R.string.hogwarts_staff),
                             value = singleCharacterModel.hogwartsStaff
                         )
-                        DetailEntry(
-                            isList = true,
-                            title = stringResource(R.string.alternative_actors),
-                            list = singleCharacterModel.alternateActors
-                        )
+                        if (singleCharacterModel.alternateActors.isNotEmpty()){
+                            DetailEntry(
+                                isList = true,
+                                title = stringResource(R.string.alternative_actors),
+                                list = singleCharacterModel.alternateActors
+                            )
+                        }
                         DetailEntry(title = stringResource(R.string.alive), value = singleCharacterModel.alive)
                     }
                 }
@@ -151,29 +154,63 @@ fun DetailScreen(
 @Preview
 @Composable
 fun DetailsScreenPreview() {
-    DetailScreen(
-        navHostController = rememberNavController(),
-        singleCharacterModel = HPCharacter(
-            id = "9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8",
-            name = "Harry Potter",
-            alternateNames = listOf("The Boy Who Lived", "The Chosen One"),
-            actor = "Daniel Radcliffe",
-            alternateActors = emptyList(),
-            alive = true,
-            ancestry = "half-blood",
-            dateOfBirth = "31-07-1980",
-            yearOfBirth = 1980,
-            eyeColor = "green",
-            gender = "male",
-            hairColor = "black",
-            hogwartsStaff = false,
-            hogwartsStudent = true,
-            house = "Gryffindor",
-            image = "https://ik.imagekit.io/hpapi/harry.jpg",
-            patronus = "stag",
-            species = "human",
-            wand = Wand("phoenix feather", 11.0, ""),
-            wizard = true
+    PotterpedieTheme {
+        DetailScreen(
+            navHostController = rememberNavController(),
+            singleCharacterModel = HPCharacter(
+                id = "9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8",
+                name = "Harry Potter",
+                alternateNames = listOf("The Boy Who Lived", "The Chosen One"),
+                actor = "Daniel Radcliffe",
+                alternateActors = emptyList(),
+                alive = true,
+                ancestry = "half-blood",
+                dateOfBirth = "31-07-1980",
+                yearOfBirth = 1980,
+                eyeColor = "green",
+                gender = "male",
+                hairColor = "black",
+                hogwartsStaff = false,
+                hogwartsStudent = true,
+                house = "Gryffindor",
+                image = "https://ik.imagekit.io/hpapi/harry.jpg",
+                patronus = "stag",
+                species = "human",
+                wand = Wand("phoenix feather", 11.0, ""),
+                wizard = true
+            )
         )
-    )
+    }
+}
+
+@Preview
+@Composable
+fun DetailsScreenPreviewDark() {
+    PotterpedieTheme(darkTheme = true) {
+        DetailScreen(
+            navHostController = rememberNavController(),
+            singleCharacterModel = HPCharacter(
+                id = "9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8",
+                name = "Harry Potter",
+                alternateNames = listOf("The Boy Who Lived", "The Chosen One"),
+                actor = "Daniel Radcliffe",
+                alternateActors = emptyList(),
+                alive = true,
+                ancestry = "half-blood",
+                dateOfBirth = "31-07-1980",
+                yearOfBirth = 1980,
+                eyeColor = "green",
+                gender = "male",
+                hairColor = "black",
+                hogwartsStaff = false,
+                hogwartsStudent = true,
+                house = "Gryffindor",
+                image = "https://ik.imagekit.io/hpapi/harry.jpg",
+                patronus = "stag",
+                species = "human",
+                wand = Wand("phoenix feather", 11.0, ""),
+                wizard = true
+            )
+        )
+    }
 }

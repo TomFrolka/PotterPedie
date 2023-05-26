@@ -18,9 +18,7 @@ import com.tf.potterpedie.presentation.home.HomeScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun MainNavGraph(
-    onScreenLoaded: () -> Unit
-) {
+fun MainNavGraph() {
     val navController = rememberAnimatedNavController()
     AnimatedNavHost(
         navController = navController,
@@ -29,7 +27,7 @@ fun MainNavGraph(
         setComposable(
             route = Screen.HomeScreen.route
         ) {
-            HomeScreen(navController = navController) { onScreenLoaded() }
+            HomeScreen(navController = navController)
         }
         setComposable(
             route = Screen.DetailScreen.route
