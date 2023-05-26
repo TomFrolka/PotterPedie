@@ -4,7 +4,5 @@
         <item name="windowSplashScreenBackground">#FFFFFF</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/splash</item>
         <item name="postSplashScreenTheme">@style/Theme.Potterpedie</item>
-        <item name="android:windowLayoutInDisplayCutoutMode">default</item>
-
     </style>
 </resources>
